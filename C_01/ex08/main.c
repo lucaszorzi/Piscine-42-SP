@@ -4,7 +4,7 @@ void	ft_sort_int_tab(int *tab, int size);
 
 int	main(void)
 {
-	int array[10] = {8, 7, 7, 6, 5, 4, 3, 2, 1, 0};
+	int array[10] = {2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 0};
 	int	size = 9;
 
 	ft_sort_int_tab(array, size);
