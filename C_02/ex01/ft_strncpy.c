@@ -1,20 +1,17 @@
 int	ft_strlen(char *str)
 {
-	int	length;
+	int	len;
 
-	length = 0;
-	while (str[length])
-	{
-		length++;
-	}
-	return (length);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
-
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
-	unsigned int	src_length;
+	unsigned int	dest_len;
 
 	i = 0;
 	while (src[i] && i < n)
@@ -22,8 +19,8 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	src_length = ft_strlen(src);
-	while (i <= src_length)
+	dest_len = ft_strlen(dest);
+	while (i < n)
 	{
 		dest[i] = '\0';
 		i++;
