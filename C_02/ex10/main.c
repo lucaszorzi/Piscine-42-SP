@@ -19,8 +19,4 @@ int	main(void)
 	printf("\n\n%zu\n", strlcpy(dest2, src2, size));
 	printf("src2: %s\n", src);
 	printf("dest2: %s\n", dest);
-	if(dest[5] == '\0')
-		printf("\ntem \\0 no dest");
-		if(dest2[5] == '\0')
-		printf("\ntem \\0 no dest2");
 }

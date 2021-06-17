@@ -1,26 +1,38 @@
 #include <unistd.h>
-#include <stdio.h>
 
-const char	g_alpha_hex[17] = "0123456789abcdef";
+const char	g_base_hexa[17] = "0123456789abcdef";
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ft_put_hexa(int nb)
+{
+	int	index;
+
+	if (nb <= 0)
+		nb += 256;
+	index = nb / 16;
+	ft_putchar(g_base_hexa[index]);
+	index = nb % 16;
+	ft_putchar(g_base_hexa[index]);
+}
 
 void	ft_putstr_non_printable(char *str)
 {
 	int	i;
-	int	index;
 
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 32 && str[i] <= 126)
-			write(1, &str[i], 1);
-		else
+		if (str[i] < 32 || str[i] == 127)
 		{
-			write(1, "\\", 1);
-			index = str[i] / 16;
-			write(1, &g_alpha_hex[index], 1);
-			index = str[i] % 16;
-			write(1, &g_alpha_hex[index], 1);
+			ft_putchar('\\');
+			ft_put_hexa(str[i]);
 		}
+		else
+			ft_putchar(str[i]);
 		i++;
 	}
 }

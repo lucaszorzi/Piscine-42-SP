@@ -16,19 +16,18 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	unsigned int	src_length;
 
 	src_length = ft_strlen(src);
-	if (src_length >= size)
+	i = 0;
+	if (size == 0)
+		return (src_length);
+	while (src[i] && i < size - 1)
 	{
-		i = 0;
-		while (src[i] && i < size - 1)
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		while (i <= src_length)
-		{
-			dest[i] = '\0';
-			i++;
-		}
+		dest[i] = src[i];
+		i++;
+	}
+	while (i <= src_length)
+	{
+		dest[i] = '\0';
+		i++;
 	}
 	return (src_length);
 }
