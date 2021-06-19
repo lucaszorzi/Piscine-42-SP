@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <stdio.h>
 
 const char	g_base_dec[11] = "0123456789";
 const char	g_base_hexa[17] = "0123456789ABCDEF";
